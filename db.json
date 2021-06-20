@@ -41,6 +41,27 @@
       "type": "cotton",
       "brand": "nike",
       "price": 30
+    },
+    {
+      "id": 7,
+      "name": "shirt",
+      "type": "",
+      "brand": "",
+      "price": 0
+    },
+    {
+      "id": 8,
+      "name": "shirt",
+      "type": "",
+      "brand": "",
+      "price": 0
+    },
+    {
+      "id": 9,
+      "name": "pants",
+      "type": "pants",
+      "brand": "",
+      "price": 0
     }
   ]
 }
