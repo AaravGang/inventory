@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "",
+      "type": "",
+      "brand": "",
+      "price": 0
+    },
+    {
+      "id": 2,
+      "name": "hello",
+      "type": "",
+      "brand": "",
+      "price": 0
+    }
+  ]
+}
