@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,KACE,YACF,CAEA,EACE,2CACF","file":"main.fa251046.chunk.css","sourcesContent":["body {\n  padding: 2rem;\n}\n\n* {\n  font-family: monospace, \"Courier New\", Courier;\n}\n"]}
