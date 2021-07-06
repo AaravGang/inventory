@@ -1,10 +1,25 @@
+import UpdateItem from "./UpdateItem";
+
 export default function DisplayItems(props) {
   const showItem = (item) => (
-    <tr>
+    <tr key={item.id}>
       {Object.entries(item).map((e) => {
-        // console.log(e)
-        return <td>{e[1]}</td>;
+        return <td key={`${item}-${e[0]}`}>{e[1]}</td>;
       })}
+      <td>
+        <UpdateItem item={item} updateItem={props.updateItem} />
+      </td>
+
+      <td>
+        <button
+          onClick={() => {
+            props.deleteItem(item);
+          }}
+          className="btn btn-danger"
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 
@@ -19,8 +34,12 @@ export default function DisplayItems(props) {
             {props.items.length > 0 ? (
               <tr>
                 {Object.keys(props.items[0]).map((key) => (
-                  <th scope="col">{key.toUpperCase()}</th>
+                  <th key={key} scope="col">
+                    {key.toUpperCase()}
+                  </th>
                 ))}
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
               </tr>
             ) : (
               <tr>

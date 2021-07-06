@@ -1,13 +1,14 @@
 import { useState } from "react";
 
 function SearchBar(props) {
+  const [id, setId] = useState(0);
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [brand, setBrand] = useState("");
   const [price, setPrice] = useState(0);
 
   const handleSearchButtonClicked = () => {
-    props.updateFilters({ name, type, brand, price });
+    props.updateFilters({ id, name, type, brand, price });
   };
 
   return (
@@ -17,6 +18,19 @@ function SearchBar(props) {
       </div>
 
       <div className="row mt-4">
+        <div className="col">
+          <label htmlFor="search-id-field">
+            <strong>ID</strong>
+          </label>
+
+          <input
+            className="form-control"
+            type="number"
+            id="search-id-field"
+            placeholder="Item Id"
+            onChange={(e) => setId(parseInt(e.target.value))}
+          />
+        </div>
         <div className="col">
           <label htmlFor="search-name-field">
             <strong>Name</strong>

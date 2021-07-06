@@ -8,6 +8,10 @@ function AddItem(props) {
   const id = null;
   const handleAddItemButtonClicked = () => {
     props.addItem({ id, name, type, brand, price });
+    setName("");
+    setType("");
+    setBrand("");
+    setPrice(0);
   };
 
   return (
@@ -26,7 +30,7 @@ function AddItem(props) {
               className="form-control"
               type="text"
               id="add-name-field"
-              // value={name}
+              value={name}
               placeholder="Ex: Shirt"
               onChange={(e) => setName(e.target.value)}
             />
@@ -41,7 +45,7 @@ function AddItem(props) {
               className="form-control"
               type="text"
               id="add-type-field"
-              // value={type}
+              value={type}
               placeholder="Ex: Cotton"
               onChange={(e) => setType(e.target.value)}
             />
@@ -57,7 +61,7 @@ function AddItem(props) {
               className="form-control"
               type="text"
               id="add-brand-field"
-              // value={brand}
+              value={brand}
               placeholder="Ex: Nike"
               onChange={(e) => setBrand(e.target.value)}
             />
@@ -72,9 +76,15 @@ function AddItem(props) {
               className="form-control"
               type="number"
               id="add-price-field"
-              // value={price}
+              value={price}
               placeholder="Ex: $50"
-              onChange={(e) => setPrice(parseInt(e.target.value))}
+              onChange={(e) =>
+                setPrice(
+                  isNaN(parseInt(e.target.value))
+                    ? ""
+                    : parseInt(e.target.value)
+                )
+              }
             />
           </div>
         </div>
