@@ -1,5 +1,4 @@
 import { useState } from "react";
-//test
 
 function AddItem(props) {
   const [name, setName] = useState("");
